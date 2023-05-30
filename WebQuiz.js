@@ -1,5 +1,6 @@
 var selection = document.querySelectorAll('.selections');
-var result = document.querySelectorAll('.rightwrong');
+var feedback = document.querySelectorAll('.rightwrong');
+var result = document.querySelectorAll('.result');
 
 const correct = "Correct!", wrong = "Incorrect!";
 
@@ -19,17 +20,15 @@ selection.forEach(s => s.addEventListener('click', ()=>{
 
         if(correctAnswers[questionNum].answer == selectedAnswerNumber){
 
-            var answer = correctAnswers[questionNum].a;
-            var desc = correctAnswers[questionNum].d;
+            feedback[questionNum - 1].textContent = correct;
 
-            result[questionNum - 1].classList.remove('d-none');
-
-            console.log("qestion: " + questionNum + " correct ans: " + correctAnswers[questionNum].answer +  " selected ans: " + selectedAnswerNumber);
             console.log("correct");
 
         }
         else{
+            feedback[questionNum - 1].textContent = wrong;
             console.log("incorrect or wrong");
         }
+        result[questionNum - 1].classList.remove('d-none');
 
 }))
