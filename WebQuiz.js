@@ -5,7 +5,7 @@ var correctAnsText = document.querySelectorAll('.ifwrong');
 
 const correct = "Correct!", wrong = "Incorrect!";
 
-var correctAnswers = {
+const correctAnswers = {
     "1": {answer: 2},
     "2": {answer: 3},
     "3": {answer: 1},
@@ -19,7 +19,6 @@ selection.forEach(s => s.addEventListener('click', ()=>{
     var selectedAnswerNumber = s.getAttribute('data-selection');
     var questionNum = s.getAttribute('data-question');
     var correctAnswer = correctAnswers[questionNum].answer;
-
     var resultIndex = questionNum - 1;
 
     if($(result[resultIndex]).hasClass('d-none')){
@@ -29,10 +28,7 @@ selection.forEach(s => s.addEventListener('click', ()=>{
         else{
             feedback[resultIndex].textContent = wrong;
             let correctionText = correctAnswer;
-            correctAnsText[resultIndex].textContent = correctionText;
-            console.log(correctAnswer.textContent);
-            console.log(correctAnswer.innerHtml);
-            console.log(correctAnswer.text);
+            correctAnsText[resultIndex].textContent = "The correct answer was option " + correctionText;
         }
         result[resultIndex].classList.remove('d-none');
     }
