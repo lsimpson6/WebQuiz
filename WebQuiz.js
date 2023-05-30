@@ -1,5 +1,5 @@
 var question = document.querySelectorAll('.questions');
-var selections = document.querySelectorAll('.selections');
+var selection = document.querySelectorAll('.selections');
 var result = document.querySelectorAll('.result');
 
 const correct = "Correct!", wrong = "Incorrect!";
@@ -10,9 +10,11 @@ var correctAnswers = {
     "3": {q: 3, a: "This is answer 2", d: ""},
     "4": {q: 4, a: "This is answer 3", d: ""}
 }
-
-selections.forEach(s => s.addEventListener('click', ()=>{
+console.log("loaded, you may now click");
+selection.forEach(s => s.addEventListener('click', ()=>{
+    console.log("clicked - start");
     var questionNum = s.getAttribute('data-selection');
+    result[questionNum].classList.remove('d-none');
 
     for(let i = 0; i < correctAnswers.length; i++){
         if(i = questionNum){
@@ -23,6 +25,7 @@ selections.forEach(s => s.addEventListener('click', ()=>{
             result[questionNum].classList.remove('d-none');
 
             console.log(questionNum);
+            console.log("within if - done");
 
         }
     }
