@@ -6,10 +6,10 @@ var correctAnsText = document.querySelectorAll('.ifwrong');
 const correct = "Correct!", wrong = "Incorrect!";
 
 var correctAnswers = {
-    "1": {answer: 2, d: ""},
-    "2": {answer: 3, d: ""},
-    "3": {answer: 1, d: ""},
-    "4": {answer: 3, d: ""}
+    "1": {answer: 2},
+    "2": {answer: 3},
+    "3": {answer: 1},
+    "4": {answer: 3}
 }
 
 console.log("loaded, you may now click");
@@ -28,7 +28,8 @@ selection.forEach(s => s.addEventListener('click', ()=>{
         }
         else{
             feedback[resultIndex].textContent = wrong;
-            correctAnsText[resultIndex].textContent = correctAnswer.textContent;
+            let correctionText = "The correct answser was option " + correctAnswer;
+            correctAnsText[resultIndex].textContent == correctionText;
         }
         result[resultIndex].classList.remove('d-none');
     }
