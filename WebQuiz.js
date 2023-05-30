@@ -1,4 +1,4 @@
-var question = document.getAttribute('data-question');
+var question = document.querySelectorAll('.questions');
 var selections = document.querySelectorAll('.selections');
 var result = document.querySelectorAll('.result');
 
