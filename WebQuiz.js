@@ -22,7 +22,7 @@ selection.forEach(s => s.addEventListener('click', ()=>{
 
             result[questionNum - 1].classList.remove('d-none');
 
-            console.log(questionNum);
+            console.log("qestion: " + questionNum + " correct ans: " + correctAnswers[questionNum].a +  " selected ans: " + selectedAnswerNumber);
             console.log("correct");
 
         }
