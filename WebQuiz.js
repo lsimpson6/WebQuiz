@@ -1,5 +1,5 @@
 var selection = document.querySelectorAll('.selections');
-var result = document.querySelectorAll('.result');
+var result = document.querySelectorAll('.right-wrong');
 
 const correct = "Correct!", wrong = "Incorrect!";
 
@@ -23,7 +23,7 @@ selection.forEach(s => s.addEventListener('click', ()=>{
             res.textContent = correct;
         }
         else{
-            res.textContent = incorrect;
+            res.textContent = wrong;
         }
         res.classList.remove('d-none');
     }
