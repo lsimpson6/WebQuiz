@@ -1,6 +1,7 @@
 var selection = document.querySelectorAll('.selections');
 var feedback = document.querySelectorAll('.rightwrong');
 var result = document.querySelectorAll('.result');
+var correctAnsText = document.querySelectorAll('.ifwrong');
 
 const correct = "Correct!", wrong = "Incorrect!";
 
@@ -17,15 +18,19 @@ selection.forEach(s => s.addEventListener('click', ()=>{
 
     var selectedAnswerNumber = s.getAttribute('data-selection');
     var questionNum = s.getAttribute('data-question');
+    var correctAnswer = correctAnswers[questionNum].answer;
 
-    if($(result[questionNum - 1]).hasClass('d-none')){
-        if(correctAnswers[questionNum].answer == selectedAnswerNumber){
-            feedback[questionNum - 1].textContent = correct;
+    var resultIndex = questionNum - 1;
+
+    if($(result[resultIndex]).hasClass('d-none')){
+        if(correctAnswer == selectedAnswerNumber){
+            feedback[resultIndex].textContent = correct;
         }
         else{
-            feedback[questionNum - 1].textContent = wrong;
+            feedback[resultIndex].textContent = wrong;
+            correctAnsText[resultIndex].textContent = correctAnswer.textContent;
         }
-        result[questionNum - 1].classList.remove('d-none');
+        result[resultIndex].classList.remove('d-none');
     }
 
 }))
