@@ -17,17 +17,19 @@ selection.forEach(s => s.addEventListener('click', ()=>{
     var selectedAnswerNumber = s.getAttribute('data-selection');
     var questionNum = s.getAttribute('data-question');
 
-    if($(result[questionNum - 1]).hasClass('d-none')){
         if(correctAnswers[questionNum].answer == selectedAnswerNumber){
-            result[questionNum - 1].textContent = correct;
+
+            var answer = correctAnswers[questionNum].a;
+            var desc = correctAnswers[questionNum].d;
+
+            result[questionNum - 1].classList.remove('d-none');
+
+            console.log("qestion: " + questionNum + " correct ans: " + correctAnswers[questionNum].answer +  " selected ans: " + selectedAnswerNumber);
             console.log("correct");
+
         }
         else{
-            result[questionNum - 1].textContent = incorrect;
-            console.log("incorrect");
+            console.log("incorrect or wrong");
         }
-        result[questionNum - 1].classList.remove('d-none');
-        console.log("removed");
-    }
 
 }))
