@@ -18,17 +18,14 @@ selection.forEach(s => s.addEventListener('click', ()=>{
     var selectedAnswerNumber = s.getAttribute('data-selection');
     var questionNum = s.getAttribute('data-question');
 
+    if($(result[questionNum - 1]).hasClass('d-none')){
         if(correctAnswers[questionNum].answer == selectedAnswerNumber){
-
             feedback[questionNum - 1].textContent = correct;
-
-            console.log("correct");
-
         }
         else{
             feedback[questionNum - 1].textContent = wrong;
-            console.log("incorrect or wrong");
         }
         result[questionNum - 1].classList.remove('d-none');
+    }
 
 }))
