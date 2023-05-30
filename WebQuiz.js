@@ -12,8 +12,6 @@ const correctAnswers = {
     "4": {answer: 3}
 }
 
-console.log("loaded, you may now click");
-
 selection.forEach(s => s.addEventListener('click', ()=>{
 
     var selectedAnswerNumber = s.getAttribute('data-selection');
