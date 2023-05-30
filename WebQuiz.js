@@ -12,7 +12,6 @@ var correctAnswers = {
 }
 
 selections.forEach(s => s.addEventListener('click', ()=>{
-
     var questionNum = s.getAttribute('data-selection');
 
     for(let i = 0; i < correctAnswers.length; i++){
@@ -27,6 +26,4 @@ selections.forEach(s => s.addEventListener('click', ()=>{
 
         }
     }
-
 }))
-
