@@ -11,7 +11,7 @@ var correctAnswers = {
     "4": {q: 4, a: "This is answer 3", d: ""}
 }
 
-selections.forEach('click', s => {
+selections.forEach(s => s.addEventListner('click', ()=>{
 
     var questionNum = s.getAttribute('data-selection');
 
@@ -28,4 +28,5 @@ selections.forEach('click', s => {
         }
     }
 
-})
+}))
+
