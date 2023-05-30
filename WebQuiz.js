@@ -14,9 +14,8 @@ console.log("loaded, you may now click");
 selection.forEach(s => s.addEventListener('click', ()=>{
     console.log("clicked - start");
     var questionNum = s.getAttribute('data-selection');
-    result[questionNum].classList.remove('d-none');
 
-    for(let i = 0; i < correctAnswers.length; i++){
+    for(let i = 0; i < 4; i++){
         if(i = questionNum){
 
             var answer = correctAnswers[questionNum].a;
