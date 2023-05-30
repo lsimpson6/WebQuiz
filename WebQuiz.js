@@ -22,7 +22,7 @@ selection.forEach(s => s.addEventListener('click', ()=>{
             var answer = correctAnswers[questionNum].a;
             var desc = correctAnswers[questionNum].d;
 
-            result[questionNum].classList.remove('d-none');
+            result[questionNum - 1].classList.remove('d-none');
 
             console.log(questionNum);
             console.log("within if - done");
