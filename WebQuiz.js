@@ -29,7 +29,7 @@ selection.forEach(s => s.addEventListener('click', ()=>{
         else{
             feedback[resultIndex].textContent = wrong;
             let correctionText = "The correct answser was option " + correctAnswer;
-            correctAnsText[resultIndex].textContent == correctionText;
+            correctAnsText[resultIndex].textContent = correctionText;
         }
         result[resultIndex].classList.remove('d-none');
     }
