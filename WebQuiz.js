@@ -23,7 +23,7 @@ selections.forEach(s => s.addEventListener('click', ()=>{
 
             result[questionNum].classList.remove('d-none');
 
-            alert('correct');
+            console.log(questionNum);
 
         }
     }
