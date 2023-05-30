@@ -30,6 +30,9 @@ selection.forEach(s => s.addEventListener('click', ()=>{
             feedback[resultIndex].textContent = wrong;
             let correctionText = correct.textContent;
             correctAnsText[resultIndex].textContent = correctionText;
+            console.log(correct.textContent);
+            console.log(correct.innerHtml);
+            console.log(correct.text);
         }
         result[resultIndex].classList.remove('d-none');
     }
