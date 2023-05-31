@@ -35,7 +35,7 @@ selection.forEach(s => s.addEventListener('click', ()=>{
 
         setTimeout(()=>{
             window.scrollTo({ top: responseBox - 25, behavior: 'smooth'});
-        }, 500);
+        }, 100);
     }
 
 }))
