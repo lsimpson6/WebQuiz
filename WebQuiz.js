@@ -28,6 +28,9 @@ selection.forEach(s => s.addEventListener('click', ()=>{
             let correctionText = correctAnswer;
             correctAnsText[resultIndex].textContent = "The correct answer was option " + correctionText;
         }
+
+        let responseBox = result[questionNum].offsetTop;
+        window.scrollTo({ top: responseBox, behavior: 'smooth'});
         result[resultIndex].classList.remove('d-none');
     }
 
