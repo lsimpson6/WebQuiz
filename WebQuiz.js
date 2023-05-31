@@ -32,7 +32,7 @@ selection.forEach(s => s.addEventListener('click', ()=>{
         result[resultIndex].classList.remove('d-none');
 
         let responseBox = result[resultIndex].offsetTop;
-        window.scrollTo({ top: responseBox, behavior: 'smooth'});
+        window.scrollTo({ top: responseBox - 25, behavior: 'smooth'});
     }
 
 }))
