@@ -53,3 +53,10 @@ selection.forEach(s => s.addEventListener('click', ()=>{
     }
 
 }))
+
+document.getAttribute('data-dismiss').addEventListener('click', ()=>{
+    if(document.getAttribute('data-dismiss')= "close"){
+        shareModal.classList.remove('show');
+        shareModal.style.display = 'none';
+    }
+})
