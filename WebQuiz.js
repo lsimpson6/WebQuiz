@@ -45,7 +45,7 @@ selection.forEach(s => s.addEventListener('click', ()=>{
         }, 100);
     }
 
-    if(numAnswered == 4){
+    if(numAnswered == document.querySelectorAll('.question-container').length){
         setTimeout(()=>{
             quizScore.textContent = "You answered " + correctCount + "/" + numAnswered + " correctly!"
             shareModal.classList.add('show');
@@ -83,6 +83,6 @@ dataShare.forEach(ds => ds.addEventListener('click', function (e){
     }
 
 
-    window.open(url, windowTitle, 'height=100, width=200')
+    window.open(url, windowTitle, 'height=100,width=200')
 
 }))
