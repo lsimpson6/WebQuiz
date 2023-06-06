@@ -6,6 +6,7 @@ var correctCount = 0, incorrectCount = 0;
 var numAnswered = 0;
 var shareModal = document.getElementById('share-results-modal');
 var quizScore = document.getElementById('quiz-score');
+var linkedin = document.getElementById('linkedin');
 
 const correct = "Correct!", wrong = "Incorrect!";
 
@@ -53,6 +54,10 @@ selection.forEach(s => s.addEventListener('click', ()=>{
     }
 
 }))
+
+linkedin.addEventListener('click', ()=>{
+    window.open("http://www.facebook.com/share.php?u=https://bethany.org/resources/tanks-and-foreign-troops-stretched-across-the-horizon-war-had-come&hashtag=%23&quote=", "Share Results", "height=100,width=200");
+})
 
 document.querySelector('.close').addEventListener('click', ()=>{
     shareModal.classList.remove('show');
