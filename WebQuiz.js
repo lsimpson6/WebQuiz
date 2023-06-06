@@ -4,6 +4,8 @@ var result = document.querySelectorAll('.result');
 var correctAnsText = document.querySelectorAll('.ifwrong');
 var correctCount = 0, incorrectCount = 0;
 var numAnswered = 0;
+var shareModal = document.getElementById('share-results-modal');
+var quizScore = document.getElementById('quiz-score');
 
 const correct = "Correct!", wrong = "Incorrect!";
 
@@ -43,7 +45,11 @@ selection.forEach(s => s.addEventListener('click', ()=>{
     }
 
     if(numAnswered == 4){
-        alert("you answered " + correctCount + "/" + numAnswered + " correctly!")
+        setTimeout(()=>{
+            quizScore.textContent = "You answered " + correctCount + "/" + numAnswered + " correctly!"
+            shareModal.classList.add('show');
+            shareModal.style.display = 'block';
+        }, 250);
     }
 
 }))
