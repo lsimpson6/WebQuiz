@@ -72,7 +72,7 @@ dataShare.forEach(ds => ds.addEventListener('click', function (e){
     switch (platformName)
     {
         case "facebook":
-            url = "http://www.facebook.com/share.php?u=https://bethany.org/resources/tanks-and-foreign-troops-stretched-across-the-horizon-war-had-come&hashtag=%23&quote="
+            url = "http://www.facebook.com/share.php?u=https://bethany.org/resources/tanks-and-foreign-troops-stretched-across-the-horizon-war-had-come&hashtag=%23&quote=" + "You answered " + correctCount + "/" + numAnswered + " correctly!"
         break;
         case "linkedin":
             url = "https://www.linkedin.com/shareArticle?mini=true&url=https://bethany.org/resources/tanks-and-foreign-troops-stretched-across-the-horizon-war-had-come&title=Tanks%20and%20foreign%20troops%20stretched%20across%20the%20horizon%E2%80%94war%20had%20come"
