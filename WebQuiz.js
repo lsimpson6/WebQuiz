@@ -55,11 +55,33 @@ selection.forEach(s => s.addEventListener('click', ()=>{
 
 }))
 
-linkedin.addEventListener('click', ()=>{
-    window.open("http://www.facebook.com/share.php?u=https://bethany.org/resources/tanks-and-foreign-troops-stretched-across-the-horizon-war-had-come&hashtag=%23&quote=", "Share Results", "height=100,width=200");
-})
-
 document.querySelector('.close').addEventListener('click', ()=>{
     shareModal.classList.remove('show');
     shareModal.style.display = 'none';
 })
+
+var dataShare = document.getAttribute('data-share');
+
+dataShare.forEach(ds => ds.addEventListener('click', function (e){
+    var url = "#";
+    var windowTitle = "Share Results on " + ds.textContent;
+
+    e.preventDefault();
+
+    switch (ds.textContent)
+    {
+        case "facebook":
+            url = "http://www.facebook.com/share.php?u=https://bethany.org/resources/tanks-and-foreign-troops-stretched-across-the-horizon-war-had-come&hashtag=%23&quote="
+        break;
+        case "linkedin":
+            url = "https://www.linkedin.com/shareArticle?mini=true&url=https://bethany.org/resources/tanks-and-foreign-troops-stretched-across-the-horizon-war-had-come&title=Tanks%20and%20foreign%20troops%20stretched%20across%20the%20horizon%E2%80%94war%20had%20come"
+        break;
+        case "twitter":
+            url = "https://twitter.com/intent/tweet?text=Tanks%20and%20foreign%20troops%20stretched%20across%20the%20horizon%E2%80%94war%20had%20come%20&url=https://bethany.org/resources/tanks-and-foreign-troops-stretched-across-the-horizon-war-had-come"
+        break;
+    }
+
+
+    window.open(url, windowTitle, 'height=100, width=200')
+
+}))
