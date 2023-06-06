@@ -60,15 +60,16 @@ document.querySelector('.close').addEventListener('click', ()=>{
     shareModal.style.display = 'none';
 })
 
-var dataShare = document.getAttribute('data-share');
+var dataShare = document.querySelectorAll('.social-share-links');
 
 dataShare.forEach(ds => ds.addEventListener('click', function (e){
+    var platformName = ds.getAttribute('data-share');
     var url = "#";
-    var windowTitle = "Share Results on " + ds.textContent;
+    var windowTitle = "Share Results on " + platformName;
 
     e.preventDefault();
 
-    switch (ds.textContent)
+    switch (platformName)
     {
         case "facebook":
             url = "http://www.facebook.com/share.php?u=https://bethany.org/resources/tanks-and-foreign-troops-stretched-across-the-horizon-war-had-come&hashtag=%23&quote="
