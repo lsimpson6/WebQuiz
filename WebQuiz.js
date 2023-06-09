@@ -10,13 +10,6 @@ var linkedin = document.getElementById('linkedin');
 
 const correct = "Correct!", wrong = "Incorrect!";
 
-const correctAnswers = {
-    "1": {answer: 2},
-    "2": {answer: 3},
-    "3": {answer: 1},
-    "4": {answer: 3}
-}
-
 selection.forEach(s => s.addEventListener('click', ()=>{
 
     var selectedAnswerNumber = s.getAttribute('data-selection');
