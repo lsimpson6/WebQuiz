@@ -33,7 +33,7 @@ selection.forEach(s => s.addEventListener('click', (hideScroll)=>{
         result[resultIndex].classList.remove('d-none');
         numAnswered = correctCount + incorrectCount;
         let responseBox = result[resultIndex].offsetTop;
-        if(hideScroll != false){
+        if(hideScroll != true){
             setTimeout(()=>{
                 window.scrollTo({ top: responseBox - 25, behavior: 'smooth'});
             }, 100);
