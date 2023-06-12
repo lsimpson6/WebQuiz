@@ -11,7 +11,7 @@ var hideScroll;
 
 const correct = "Correct!", wrong = "Incorrect!";
 
-selection.forEach(s => s.addEventListener('click', (hideScroll)=>{
+selection.forEach(s => s.addEventListener('click', ()=>{
 
     var selectedAnswerNumber = s.getAttribute('data-selection');
     var questionNum = s.getAttribute('data-question');
