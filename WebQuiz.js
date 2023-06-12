@@ -25,8 +25,7 @@ selection.forEach(s => s.addEventListener('click', ()=>{
         }
         else{
             feedback[resultIndex].textContent = wrong;
-            let correctionText = correctAnswer;
-            correctAnsText[resultIndex].textContent = "The correct answer was option " + correctionText.textContent;
+            correctAnsText[resultIndex].textContent = "The correct answer was " + questionNum[correctAnswer].textContent;
             incorrectCount ++;
         }
 
