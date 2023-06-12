@@ -15,17 +15,18 @@ selection.forEach(s => s.addEventListener('click', ()=>{
 
     var selectedAnswerNumber = s.getAttribute('data-selection');
     var questionNum = s.getAttribute('data-question');
-    var correctAnswer = correctAnswers[questionNum].answer;
+    var correctAnswerIndex = correctAnswers[questionNum].answer;
     var resultIndex = questionNum - 1;
 
     if($(result[resultIndex]).hasClass('d-none')){
-        if(correctAnswer == selectedAnswerNumber){
+        if(correctAnswerIndex == selectedAnswerNumber){
             feedback[resultIndex].textContent = correct;
             correctCount ++;
         }
         else{
             feedback[resultIndex].textContent = wrong;
-            correctAnsText[resultIndex].textContent = "The correct answer was " + questionNum[correctAnswer].textContent;
+            let answerTextIndex = 'data-question[' + correctAnswerIndex + ']';
+            correctAnsText[resultIndex].textContent = "The correct answer was option " + s.getAttribute[answerTextIndex].textContent;
             incorrectCount ++;
         }
 
