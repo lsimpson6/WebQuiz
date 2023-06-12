@@ -7,10 +7,11 @@ var numAnswered = 0;
 var shareModal = document.getElementById('share-results-modal');
 var quizScore = document.getElementById('quiz-score');
 var linkedin = document.getElementById('linkedin');
+var hideScroll;
 
 const correct = "Correct!", wrong = "Incorrect!";
 
-selection.forEach(s => s.addEventListener('click', ()=>{
+selection.forEach(s => s.addEventListener('click', (hideScroll)=>{
 
     var selectedAnswerNumber = s.getAttribute('data-selection');
     var questionNum = s.getAttribute('data-question');
@@ -32,10 +33,11 @@ selection.forEach(s => s.addEventListener('click', ()=>{
         result[resultIndex].classList.remove('d-none');
         numAnswered = correctCount + incorrectCount;
         let responseBox = result[resultIndex].offsetTop;
-
-        setTimeout(()=>{
-            window.scrollTo({ top: responseBox - 25, behavior: 'smooth'});
-        }, 100);
+        if(hideScroll != false){
+            setTimeout(()=>{
+                window.scrollTo({ top: responseBox - 25, behavior: 'smooth'});
+            }, 100);
+        } 
     }
 
     if(numAnswered == document.querySelectorAll('.question-container').length){
